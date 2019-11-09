@@ -2,7 +2,7 @@ const request = require('request');
 const fs = require('fs');
 
 // dark sky api key
-const secretKey = '3e44c945dee9725deab92b33480f0efa';
+const secretKey = '6711d30d0a6d96f08193c0dda8e1d486';
 // city geo location
 // latitude: N is + | S is -
 // longitude: E is + | W is -
@@ -12,9 +12,9 @@ const longitude = -118.2437;
 // timeoff set: E is - | W is +
 const timeOffset = 8;
 // startDate startDate Date.UTC(startYear, month, day)
-const startYear = 2016;
-const startMonth = 7;
-const startDay = 7;
+const startYear = 2018;
+const startMonth = 4;
+const startDay = 24;
 // ====================
 const endYear = 2019;
 const endMonth = 9;
@@ -61,7 +61,7 @@ async function main() {
         process.exit();
       }
       row = `${cityName},${localDate},${data.summary},${data.icon},${data.apparentTemperatureMin},${data.apparentTemperatureMax},${data.windSpeed}\n`
-      fs.appendFile(`${cityName}.csv`, row, function (err) {
+      fs.appendFile(`export/${cityName}.csv`, row, function (err) {
         if (err) {
           // append failed
           console.error('Failed to writing to a csv file');
