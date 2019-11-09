@@ -2,7 +2,7 @@ const request = require('request');
 const fs = require('fs');
 
 // dark sky api key
-const secretKey = '6711d30d0a6d96f08193c0dda8e1d486';
+const secretKey = '';
 // city geo location
 // latitude: N is + | S is -
 // longitude: E is + | W is -
