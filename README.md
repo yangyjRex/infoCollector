@@ -2,6 +2,9 @@
 
 ### Install
 
+1. clone this repo
+2. install `npm` 
+3. run
 ```
 npm install
 ```
