@@ -57,7 +57,8 @@ async function main() {
       const data = dataObj.daily.data[0];
       const localDate = getFormattedDay(data.time * 1000);
       if (data.time > endDate) {
-        break;
+        console.log('Finished Successfully!');
+        process.exit();
       }
       row = `${cityName},${localDate},${data.summary},${data.icon},${data.apparentTemperatureMin},${data.apparentTemperatureMax},${data.windSpeed}\n`
       fs.appendFile(`${cityName}.csv`, row, function (err) {
@@ -70,7 +71,8 @@ async function main() {
         }
       })
     } catch (e) {
-      console.error(e);
+      console.log('Finished. (Maybe 1000 free call finished. Refresh the secret key)');
+      process.exit();
     }
     date = date + 24 * 60 * 60;
   }
